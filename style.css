@@ -1,0 +1,190 @@
+:root{
+    --blue: rgb(0, 9, 94);
+    --card-gap: 20px;
+    --card-row-count: 3;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: system-ui, sans-serif;
+}
+
+.container{
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+.nav-links, .nav-links ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links li {
+    color: var(--blue);
+}
+
+.nav-links button {
+    background-color: orange;
+    color: white;   
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* About */
+.about{
+    margin: 100px 0;
+    color: var(--blue);
+    text-align: center;
+}
+
+.about h1{
+    font-size: 60px;
+}
+
+.about button{
+    padding: 20px 50px;
+    color: white;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#sub-heading{
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+}
+#sub-heading::after{
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: orange;
+    z-index: -1;
+}
+
+/* Main */
+.car-box{
+    background-image: url(./media/bgimage.webp);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.car{
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: car-movement 10s linear infinite;
+}
+.car img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+@keyframes car-movement {
+    0%{
+        transform: translateX(-40%);
+    }
+    50%{
+        transform: translateX(-60%);
+    }
+    100%{
+        transform: translateX(-40%);
+    }
+}
+
+/* Events */
+.events{
+    margin: 100px 0;
+}
+
+.events-header{
+    text-align: center;
+    color: var(--blue);
+    margin-bottom: 30px;
+}
+
+i{
+    color: var(--blue);
+    font-size: 24px;
+}
+
+/* Cards */
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--card-gap);
+}
+
+.card{
+    width: calc((100% / var(--card-row-count)) - var(--card-gap) - (var(--card-gap) / var(--card-row-count)));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.card-desc{
+    padding: 10px 10px 20px;
+}
+
+.card-name, .card-date{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-name{
+    justify-content: space-between;
+}
+
+.card-date{
+    margin-left: 10px;
+    margin-top: 8px;
+    color: var(--blue);
+}

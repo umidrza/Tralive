@@ -1,0 +1,17 @@
+@media screen and (max-width: 425px){
+    :root{
+        --card-row-count: 1;
+    }
+    
+    .about h1{
+        font-size: 20px;
+    }
+    
+    .car-box {
+        height: 40vh;
+    }
+
+    .nav-links, .card-container .icon-box{
+        display: none;
+    }
+}
